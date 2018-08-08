@@ -1,2 +1,5 @@
 /ds_poll
 /ds_queue
+/ds_common
+/datashield_docker
+/.vscode
