@@ -4,11 +4,11 @@
 
 This repository is a wrapper for the datashield repositories needed to implement a queue-poll mechanism.
 
-It includes a ./gitUpdate.sh, which pulls the following subrepositories:
-ds_poll
-ds_queue
-ds_common
-datashield_docker
+It includes a `/gitUpdate.sh`, which pulls the following subrepositories:
+- ds_poll
+- ds_queue
+- ds_common
+- datashield_docker
 
 ds_queue implements a queue server, which recieves requests from a datashield client and stores them in memory to be polled and processed by the ds_poll thread
 
