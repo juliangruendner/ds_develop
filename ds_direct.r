@@ -13,6 +13,7 @@ library(dsModellingClient)
 # package)
 
 # login details
+begin = as.numeric(Sys.time())
 server <- c("datashield_opal")
 # note the datashield_opal only works from inside this docker container
 #url <- c("http://localhost:8880")
@@ -29,3 +30,12 @@ logindata <- data.frame(server,url,user,password,table)
 # Create an 'opals' object by passing the 'logindata' data frame to the
 # datashield.login function
 opals <- datashield.login(logins=logindata, assign = TRUE)
+
+
+ds.glm(formula='D$SMK31~D$GESLACHT+D$LENGTE', family='binomial', datasources = opals)
+
+datashield.logout(opals)
+timeTaken = as.numeric(Sys.time()) - begin
+print(paste(c("time taken = ", timeTaken)))
+
+print("Congratualations!!! - a basic glm model was successfully generated")

@@ -31,14 +31,16 @@ a running queue server `pgrep -fl proxpy.py` and a running poll thread `pgrep -f
 
 Now that everything is set up you can run the test R script.
 
-first run the Script without the qp `R -f ds_direct.r`
-then run the script with the qp `R -f ds_qp.r`
+first run the Script without the qp `Rscript ds_direct.r`
+then run the script with the qp `Rscript ds_qp.r`
 
 if everything runs succesfully you should see the following on your terminal:
 
 --- begin terminal output ---
-Variables assigned:
-datashield_opal--GESLACHT, GEWICHT, LENGTE, HEALTH17A1, HEALTH17B1, HEALTH17D1, DBPa, SMK11, SMK31, SMK4A1, SMK4A21
+...
+attr(,"class")
+[1] "glmds"
+[1] "time taken = "    "3.74893593788147"
 --- end terminal output ---
 
 
@@ -49,7 +51,7 @@ if you would like to debug or develop the q-p mechanism further it might be easi
 navigate to the ds_queue repo and execute `./start.sh`
 in a new terminal window navigate to the ds_poll rep and execute `./start.sh`
 
-In a new termianl window Run the test R script in this rep `R -f ds_qp.r` and see the output of the servers in your terminal windows.
+In a new terminal window run the test R script in this repo `Rscript ds_qp.r` and see the output of the servers in your terminal windows.
 
 ## needed ports for the services
 
