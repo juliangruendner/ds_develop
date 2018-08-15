@@ -1,5 +1,5 @@
 githubBase="git@github.com:juliangruendner/"
-mlServiceRepos=("ds_common" "ds_poll" "ds_queue" "datashield_docker")
+mlServiceRepos=("ds_common" "ds_poll" "ds_queue" "datashield_docker" "ds_test")
 baseDir=$(pwd)
 
 echo "****updating base repo Develop****"
