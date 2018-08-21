@@ -1,0 +1,1 @@
+docker exec queue_server bash -c "/root/ds_queue/start.sh"
