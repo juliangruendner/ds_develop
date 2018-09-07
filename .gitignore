@@ -3,5 +3,6 @@
 /ds_common
 /datashield_docker
 /ds_poll_monitor_server
+/ds_poll_monitor_gui
 /ds_test
 /.vscode

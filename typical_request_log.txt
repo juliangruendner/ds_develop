@@ -1,0 +1,321 @@
+QUEUE
+
+#########REQUEST##########
+
+{REQ #0} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+#########REQUEST##########
+
+{REQ #1} method: GET ; host: ('localhost', 8001) ; path: /ws/system/subject-profile/_current ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept: ['application/json, application/octet-stream']
+  Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+#########REQUEST##########
+
+{REQ #3} method: POST ; host: ('localhost', 8001) ; path: /?setQueuedResponse=True ; proto: HTTP/1.1 ; len(body): 529
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+  Content-Length: ['529']
+
+----------body---------
+HTTP/1.1 200 OK
+Date: Tue, 04 Sep 2018 15:14:42 GMT
+X-Opal-Version: 2.10.0-SNAPSHOT-b20180608063354
+Set-Cookie: opalsid=f3800b80-f13b-4501-8256-c7e5890c4174;Path=/;Expires=Tue, 04-Sep-2018 15:44:43 GMT;Max-Age=1800
+Expires: -1
+Allow: GET, OPTIONS
+Cache-Control: no-cache
+Content-Type: application/json
+Pragma: no-cache
+Vary: Accept-Encoding, User-Agent
+Content-Length: 143
+
+{"principal": "administrator","realm": "opal-ini-realm","created": "2018-08-09T14:14:01.000+0000","lastUpdate": "2018-08-09T14:14:01.000+0000"}
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #5} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+#########REQUEST##########
+
+{REQ #6} method: GET ; host: ('localhost', 8001) ; path: /ws/datasource/test/table/LifeLines ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+  Accept: ['application/json, application/octet-stream']
+  Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+#########REQUEST##########
+
+{REQ #8} method: POST ; host: ('localhost', 8001) ; path: /?setQueuedResponse=True ; proto: HTTP/1.1 ; len(body): 611
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+  Content-Length: ['611']
+
+----------body---------
+HTTP/1.1 200 OK
+Date: Tue, 04 Sep 2018 15:14:43 GMT
+X-Opal-Version: 2.10.0-SNAPSHOT-b20180608063354
+Set-Cookie: opalsid=f3800b80-f13b-4501-8256-c7e5890c4174;Path=/;Expires=Tue, 04-Sep-2018 15:44:43 GMT;Max-Age=1800
+Expires: -1
+Allow: DELETE, GET, PUT, OPTIONS
+Cache-Control: no-cache
+Content-Type: application/json
+Pragma: no-cache
+Vary: Accept-Encoding, User-Agent
+Content-Length: 212
+
+{"name": "LifeLines","entityType": "Participant","link": "/datasource/test/table/LifeLines","datasourceName": "test","timestamps": {"created": "2018-08-09T14:31:23.572Z","lastUpdate": "2018-08-09T14:31:32.887Z"}}
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #10} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+#########REQUEST##########
+
+{REQ #11} method: POST ; host: ('localhost', 8001) ; path: /ws/datashield/sessions ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+  Accept: ['application/json, application/octet-stream']
+  Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+#########REQUEST##########
+
+{REQ #13} method: POST ; host: ('localhost', 8001) ; path: /?setQueuedResponse=True ; proto: HTTP/1.1 ; len(body): 688
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+  Content-Length: ['688']
+
+----------body---------
+HTTP/1.1 201 Created
+Date: Tue, 04 Sep 2018 15:14:44 GMT
+X-Opal-Version: 2.10.0-SNAPSHOT-b20180608063354
+Set-Cookie: opalsid=f3800b80-f13b-4501-8256-c7e5890c4174;Path=/;Expires=Tue, 04-Sep-2018 15:44:44 GMT;Max-Age=1800
+Expires: -1
+Cache-Control: no-cache
+Content-Type: application/json
+Location: https://localhost:8001/ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e
+Pragma: no-cache
+Content-Length: 260
+
+{"id": "00aced55-15c8-4d28-9760-3edfb8af638e","user": "administrator","creationDate": "2018-09-04T15:14:44.221Z","lastAccessDate": "2018-09-04T15:14:44.319Z","status": "WAITING","link": "/r/session/00aced55-15c8-4d28-9760-3edfb8af638e","context": "DataSHIELD"}
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #15} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+#########REQUEST##########
+
+{REQ #16} method: PUT ; host: ('localhost', 8001) ; path: /ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/symbol/D?missings=FALSE&variables=&async=true ; proto: HTTP/1.1 ; len(body): 14
+  Host: ['localhost:8001']
+  Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+  Accept: ['application/json, application/octet-stream']
+  Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+  Content-Type: ['application/x-opal']
+  Content-Length: ['14']
+
+----------body---------
+test.LifeLines
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #18} method: POST ; host: ('localhost', 8001) ; path: /?setQueuedResponse=True ; proto: HTTP/1.1 ; len(body): 505
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+  Content-Length: ['505']
+
+----------body---------
+HTTP/1.1 201 Created
+Date: Tue, 04 Sep 2018 15:14:44 GMT
+X-Opal-Version: 2.10.0-SNAPSHOT-b20180608063354
+Set-Cookie: opalsid=f3800b80-f13b-4501-8256-c7e5890c4174;Path=/;Expires=Tue, 04-Sep-2018 15:44:44 GMT;Max-Age=1800
+Expires: -1
+Cache-Control: no-cache
+Content-Type: text/plain
+Location: https://localhost:8001/ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/symbol/D?missings=FALSE&variables=&async=true
+Pragma: no-cache
+Content-Length: 38
+
+00aced55-15c8-4d28-9760-3edfb8af638e-1
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #20} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+#########REQUEST##########
+
+{REQ #21} method: GET ; host: ('localhost', 8001) ; path: /ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/command/00aced55-15c8-4d28-9760-3edfb8af638e-1?wait=true ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+  Accept: ['application/json, application/octet-stream']
+  Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+#########REQUEST##########
+
+{REQ #23} method: POST ; host: ('localhost', 8001) ; path: /?setQueuedResponse=True ; proto: HTTP/1.1 ; len(body): 641
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+  Content-Length: ['641']
+
+----------body---------
+HTTP/1.1 200 OK
+Date: Tue, 04 Sep 2018 15:14:45 GMT
+X-Opal-Version: 2.10.0-SNAPSHOT-b20180608063354
+Set-Cookie: opalsid=f3800b80-f13b-4501-8256-c7e5890c4174;Path=/;Expires=Tue, 04-Sep-2018 15:44:45 GMT;Max-Age=1800
+Expires: -1
+Allow: DELETE, GET, OPTIONS
+Cache-Control: no-cache
+Content-Type: application/json
+Pragma: no-cache
+Vary: Accept-Encoding, User-Agent
+Content-Length: 247
+
+{"id": "00aced55-15c8-4d28-9760-3edfb8af638e-1","script": "D <- opal[test.LifeLines]","status": "COMPLETED","createDate": "2018-09-04T15:14:44.779Z","withResult": false,"startDate": "2018-09-04T15:14:44.780Z","endDate": "2018-09-04T15:14:45.579Z"}
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #25} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+#########REQUEST##########
+
+{REQ #26} method: POST ; host: ('localhost', 8001) ; path: /ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/aggregate ; proto: HTTP/1.1 ; len(body): 11
+  Host: ['localhost:8001']
+  Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+  Accept: ['application/json, application/octet-stream']
+  Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+  Content-Type: ['application/x-rscript']
+  Content-Length: ['11']
+
+----------body---------
+colnames(D)
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #28} method: POST ; host: ('localhost', 8001) ; path: /?setQueuedResponse=True ; proto: HTTP/1.1 ; len(body): 526
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+  Content-Length: ['526']
+
+----------body---------
+HTTP/1.1 200 OK
+Date: Tue, 04 Sep 2018 15:14:46 GMT
+X-Opal-Version: 2.10.0-SNAPSHOT-b20180608063354
+Set-Cookie: opalsid=f3800b80-f13b-4501-8256-c7e5890c4174;Path=/;Expires=Tue, 04-Sep-2018 15:44:46 GMT;Max-Age=1800
+Expires: -1
+Cache-Control: no-cache
+Content-Type: application/octet-stream
+Pragma: no-cache
+Content-Length: 188
+
+X
+
+       GESLACHT	GEWICHT	LENGTE
+HEALTH17A1
+HEALTH17B1
+HEALTH17D1	DBPa	SMK11	SMK31	SMK4A1	SMK4A21
+----------body---------
+
+----------------END---------------
+
+#########REQUEST##########
+
+{REQ #30} method: GET ; host: ('localhost', 8001) ; path: /?getQueuedRequest=True ; proto: HTTP/1.1 ; len(body): 0
+  Host: ['localhost:8001']
+  Accept-Encoding: ['identity']
+
+
+  POLL
+
+
+
+initiating worker
+######### BEGIN REQUEST ###########
+GET https://localhost:8001/ws/system/subject-profile/_current HTTP/1.1
+Host: ['localhost:8001']
+Accept: ['application/json, application/octet-stream']
+Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+
+######### END REQUEST ###########
+######### BEGIN REQUEST ###########
+GET https://localhost:8001/ws/datasource/test/table/LifeLines HTTP/1.1
+Host: ['localhost:8001']
+Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+Accept: ['application/json, application/octet-stream']
+Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+
+######### END REQUEST ###########
+######### BEGIN REQUEST ###########
+POST https://localhost:8001/ws/datashield/sessions HTTP/1.1
+Host: ['localhost:8001']
+Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+Accept: ['application/json, application/octet-stream']
+Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+
+######### END REQUEST ###########
+######### BEGIN REQUEST ###########
+PUT https://localhost:8001/ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/symbol/D?missings=FALSE&variables=&async=true HTTP/1.1
+Host: ['localhost:8001']
+Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+Accept: ['application/json, application/octet-stream']
+Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+Content-Type: ['application/x-opal']
+Content-Length: ['14']
+
+test.LifeLines
+######### END REQUEST ###########
+######### BEGIN REQUEST ###########
+GET https://localhost:8001/ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/command/00aced55-15c8-4d28-9760-3edfb8af638e-1?wait=true HTTP/1.1
+Host: ['localhost:8001']
+Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+Accept: ['application/json, application/octet-stream']
+Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+
+
+######### END REQUEST ###########
+######### BEGIN REQUEST ###########
+POST https://localhost:8001/ws/datashield/session/00aced55-15c8-4d28-9760-3edfb8af638e/aggregate HTTP/1.1
+Host: ['localhost:8001']
+Cookie: ['opalsid=f3800b80-f13b-4501-8256-c7e5890c4174']
+Accept: ['application/json, application/octet-stream']
+Authorization: ['X-Opal-Auth YWRtaW5pc3RyYXRvcjpwYXNzd29yZA==']
+Content-Type: ['application/x-rscript']
+Content-Length: ['11']
+
+colnames(D)
+######### END REQUEST ###########
