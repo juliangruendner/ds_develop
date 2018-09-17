@@ -17,10 +17,11 @@ start the ssh agent and add the ssh key:
 ```bash 
 cd ~/.ssh
 eval $(ssh-agent -s)
+chmod 600 ~/.ssh/id_rsa_ds
 ssh-add ~/.ssh/id_rsa_ds
 ```
 
-### 2 download the ds repo to ur server
+### 2 download the ds repo to ur server and install docker
 
 1. create a dir for your qp deployment `~/ds_deployment`
 2. in your deployment dir pull the qp develop repo and all sub repos 
@@ -32,6 +33,12 @@ cd ds_develop
 ./git_update.sh
 ```
 
+install docker:
+
+```bash 
+cd ~/ds_deployment/ds_develop
+./install_docker.sh
+```
 
 ### 3 Install Opal
 
@@ -47,13 +54,33 @@ follow the steps in the README.prod.md in this folder
 ```bash
 cd ~/ds_deployment/ds_develop/ds_poll_monitor_server
 mkdir ds_poll_gui/poll-monitor
+apt-get update
+apt-get install zip
 ./deploy_new_gui.sh
 ./start_prod.sh
 ```
 
+//navigate to your gui folder and configure the monitor webservice
+
+replace the `<your_server_url_or_ip>` with your server url or ip address
+
+```bash
+cd ~/ds_deployment/ds_develop/ds_poll_monitor_server/ds_poll_gui/poll-monitor
+sed -i '' 's/<replace_prod_server_url>/<your_server_url_or_ip>/g' main.*
+```
+
 in your browser open the poll mechanism monitor:
-<server ip of current server>:80/poll-monitor
+`<server ip of current server>:80/poll-monitor`
 you should now see the poll monitor gui, which lets you control the poll thread
+
+
+### 5 restart your opal environment to ensure R server is running properly
+
+```bash
+cd  ~/ds_deployment/datashield_docker
+./stop_prod.sh
+./start_prod.sh
+```
 
 
 ## Install your queue server
@@ -72,6 +99,7 @@ start the ssh agent and add the ssh key:
 ```bash 
 cd ~/.ssh
 eval $(ssh-agent -s)
+chmod 600 ~/.ssh/id_rsa_ds
 ssh-add ~/.ssh/id_rsa_ds
 ```
 
@@ -90,7 +118,7 @@ cd ds_develop
 ### 3 start the queue server
 
 ```bash
-cd ~/ds_deployment/ds_queue
+cd ~/ds_deployment/ds_develop/ds_queue
 
 ```
 the following command starts the queue server in the background
@@ -107,7 +135,8 @@ a command could look like this:
 
 
 ## Test your installation
-your installation should now be complete and your queue server started. 
+
+Your installation should now be complete and your queue server started. 
 Go to your poll server installation and access its webservice to start the poll mechanism:
 in your browser: `<poll_server_ip>/poll-monitor`
 switch to the tab *control* and enter your queue server host and port and leave the opal server blank
@@ -115,7 +144,18 @@ then click start poll server
 your poll server should no be running (see running label in user interface)
 
 now go to your R datashield client server and execute the following commands in R, changing 
-*queue_server_host* for your queue server host
+*queue_server_host* for your queue server host.
+
+If you see this output:
+
+```
+Variables assigned:
+datashield_opal--GESLACHT, GEWICHT, LENGTE, HEALTH17A1, HEALTH17B1, HEALTH17D1, DBPa, SMK11, SMK31, SMK4A1, SMK4A21
+````
+
+your Installation is working
+
+
 
 
 ```R
