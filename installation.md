@@ -121,6 +121,9 @@ cd ds_develop
 cd ~/ds_deployment/ds_develop/ds_queue
 
 ```
+
+for more information type `python3 ds_queue.py -h`
+
 the following command starts the queue server in the background
 `nohup python3 ds_queue.py -a 0.0.0.0 -p 443 -r localhost:8843 -d proxyLog.logs -v -i -s -t 10:10`
 
