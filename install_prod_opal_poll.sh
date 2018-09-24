@@ -16,12 +16,14 @@ cd ds_develop
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
     docker -v
+    
 else
     echo "docker not installed, installing docker:"
     cd ~/ds_deployment/ds_develop
     ./install_docker.sh
 fi
 
+printf "######################\n\n\n"
 
 # install opal
 cd ~/ds_deployment/ds_develop/datashield_docker
@@ -29,6 +31,7 @@ cd ~/ds_deployment/ds_develop/datashield_docker
 
 
 # start the ds_poll_monitor_server
+printf "######################\n Installing Poll server and GUI ... \n######################\n\n"
 
 cd ~/ds_deployment/ds_develop/ds_poll_monitor_server
 mkdir ds_poll_gui/poll-monitor
@@ -45,3 +48,7 @@ cd  ~/ds_deployment/ds_develop/datashield_docker
 ./stop_prod.sh
 ./start_prod.sh
 
+printf "######################\n Setup Complete \n######################\n\n"
+
+printf "\n - visit $OPAL_SERVER_IP:80 in your browser to access the poll server user interface \n"
+printf "\n - visit $OPAL_SERVER_IP:8880 in your browser to access the opal server user interface \n"
