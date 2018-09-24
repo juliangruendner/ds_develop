@@ -28,7 +28,7 @@ mkdir ~/ds_deployment
 cd ~/ds_deployment
 git clone git@github.com:juliangruendner/ds_develop.git
 cd ds_develop
-./git_update.sh
+./gitUpdate.sh
 
 
 # start the queue
