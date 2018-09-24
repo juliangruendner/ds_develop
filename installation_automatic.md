@@ -49,40 +49,24 @@ eval $(ssh-agent -s)
 chmod 600 ~/.ssh/id_rsa_ds
 ssh-add ~/.ssh/id_rsa_ds
 ```
+### 2 - start your queue server
 
-### 2 download the ds repo to ur server
+change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod.queue.sh`
 
-1. create a dir for your qp deployment ` mkdir ~/ds_deployment`
-2. in your deployment dir pull the qp develop repo and all sub repos 
 
-```bash
-cd ~/ds_deployment
-git clone git@github.com:juliangruendner/ds_develop.git
-cd ds_develop
-./git_update.sh
-```
+#### working with the queue:
 
-### 3 start the queue server
+the queue is started in a docker container and can be managed with the following bash commands:
+first navigate to the queue repository `cd ~/ds_deployment/ds_develop/ds_queue`
 
-```bash
-cd ~/ds_deployment/ds_develop/ds_queue
+starting the queue
+execute `./start.prod.sh`
 
-```
+stopping the queue
+execute `./stop.prod.sh`
 
-for more information type `python3 ds_queue.py -h`
-
-the following command starts the queue server in the background
-`nohup python3 ds_queue.py -a 0.0.0.0 -p 443 -r localhost:8843 -d proxyLog.logs -v -i -s -t 10:10`
-
-like this the queue server is open to all ip addresses, to make the mechanism safer restrict the queue to certain ip adresses,
-with the added option -c <ipadress>,<ipadress>
-
-note, that the allowed ip addresses should at least include your poll server ip address and one R client server ip address for the q-p
-to function.
-
-a command could look like this:
-`nohup python3 ds_queue.py -a 0.0.0.0 -p 443 -r localhost:8843 -d proxyLog.logs -v -i -s -t 10:10 -c 141.123.123.1,141.123.123.10`
-
+getting the queue status
+execute `docker exec queue_server_prod bash -c "cd /root/ds_queue && ./q_admin.sh status"`
 
 ## Test your installation
 
