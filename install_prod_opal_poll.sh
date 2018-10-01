@@ -1,10 +1,16 @@
 # this file lets you install opal and the poll service
 
 # add your configuration information here
-OPAL_SERVER_IP='192.168.56.10' # Ip address of this server - default is localhost
+OPAL_SERVER_IP='127.0.0.1' # Ip address of this server - default is localhost
 export ADMIN='administrator'
 export OPAL_ADMIN_PASS='password'
 
+
+# inistialise ssh to allow access to private github repository
+cd ~/.ssh
+eval $(ssh-agent -s)
+chmod 600 ~/.ssh/id_rsa_ds
+ssh-add ~/.ssh/id_rsa_ds
 
 # initialise the repository and clone newest version
 mkdir ~/ds_deployment

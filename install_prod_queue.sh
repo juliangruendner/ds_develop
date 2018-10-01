@@ -22,6 +22,11 @@
 
 ### END CONFIGURATIONS ###
 
+# setup ssh to allow access to private repository
+cd ~/.ssh
+eval $(ssh-agent -s)
+chmod 600 ~/.ssh/id_rsa_ds
+ssh-add ~/.ssh/id_rsa_ds
 
 # Initialise the repository and clone newest version
 mkdir ~/ds_deployment

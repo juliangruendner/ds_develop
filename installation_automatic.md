@@ -12,16 +12,18 @@
 
 create a .ssh dir: `mkdir ~/.ssh`
 upload the id_rsa_ds file to your .ssh dir  (get the private key as part of your installation package)
-start the ssh agent and add the ssh key:
 
-```bash 
-cd ~/.ssh
-eval $(ssh-agent -s)
-chmod 600 ~/.ssh/id_rsa_ds
-ssh-add ~/.ssh/id_rsa_ds
-```
+upload the install_prod_opal_poll.sh from your installation package to your server to the `~` directory
+
+and change the rights to exectute `chmod +x ~/install_prod_opal_poll.sh`
+
 ### 2 install opal with R server and test data + the poll mechanism with gui
-execute `./install_prod_opal_poll.sh` in this repo
+
+*please note that this script will download ca. 2GB of data*
+
+open the install_prod_opal_poll.sh and change the configuration information to your server requirements,
+
+then execute `./install_prod_opal_poll.sh` in this repo
 
 
 in your browser open the poll mechanism monitor:
@@ -43,15 +45,13 @@ create a .ssh dir: `mkdir ~/.ssh`
 upload the id_rsa_ds file to your .ssh dir  (get the private key as part of your installation package)
 start the ssh agent and add the ssh key:
 
-```bash 
-cd ~/.ssh
-eval $(ssh-agent -s)
-chmod 600 ~/.ssh/id_rsa_ds
-ssh-add ~/.ssh/id_rsa_ds
-```
 ### 2 - start your queue server
 
-change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod.queue.sh`
+upload the install_prod_queue.sh from your installation package to your server to the `~` directory
+
+and change the rights to execute `chmod +x ~/install_prod_queue.sh`
+
+change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod_queue.sh`
 
 
 #### working with the queue:
@@ -80,6 +80,11 @@ your poll server should no be running (see running label in user interface)
 now go to your R datashield client server and execute the following commands in R, changing 
 *queue_server_host* for your queue server host.
 
+note: if you do not have a running R server see the section below *Run R server locally*
+
+
+
+
 If you see this output:
 
 ```
@@ -88,7 +93,6 @@ datashield_opal--GESLACHT, GEWICHT, LENGTE, HEALTH17A1, HEALTH17B1, HEALTH17D1, 
 ````
 
 your Installation is working
-
 
 
 
@@ -126,4 +130,13 @@ opals <- datashield.login(logins=logindata, assign = TRUE)
 ```
 
 
+### Run R server locally
 
+As a first test you can start your test server on your poll server and connect to your queue.
+
+For this navigate to the test repo:
+
+`cd ~/ds_deployment/ds_develop/ds_test` and start the test docker `docker-compose up -d`
+then connect to your test docker container `docker exec -it ds_test bash`
+
+start R `R` and then paste the R test above with the `queue_server_host` string changed to your queue server ip address
