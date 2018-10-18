@@ -1,22 +1,24 @@
 # DS Q-P + OPAL installation guide
 
-
-## Install your poll thread, opal server and poll monitor server on a server
-
-### 1 - Update Information
+## 1 - Update Information
 
 This is a manual for the updating of the opal poll and queue server.
 
 Please note that we have two update pathways:
 
 1. Dynamic update via our official repositories (requires an internet connection of the virtual machine)
-2. Static update via 
+2. Static update via a provided virtual machine
 
-### 2 Dynamic update
+
+## Update your poll thread, opal server and poll monitor server on a server
+
+### 1 Dynamic update
 
 login to your vm via ssh, then:
 
 change to sudo `sudo -s`
+
+navigate to the repo `cd ~/ds_deployment/ds_develop`
 
 *open the update_prod_opal_poll.sh and change the configuration information* to your server requirements,
 
@@ -29,6 +31,10 @@ If you have been given a new virtual machine to install please proceed as follow
 
 Start the virtual machine and login via ssh, then:
 
+change to sudo `sudo -s`
+
+navigate to the repo `cd ~/ds_deployment/ds_develop`
+
 *open the configure_prod_opal_poll.sh and change the configuration information* to your server requirements,
 
 then execute `./configure_prod_opal_poll.sh` in this repo
@@ -37,27 +43,37 @@ in your browser open the poll mechanism monitor:
 `<server ip of current server>:80/poll-monitor`
 you should now see the poll monitor gui, which lets you control the poll thread
 
-## Install your queue server
 
-### 1 - prepare for installation
+## update your queue server
 
-1. connect to your new server via ssh
-2. change to sudo user: `sudo -s`
+### 1 - Dynamic update
 
-3. add the ssh user to access the prive ds repos
+login via ssh, then:
 
-create a .ssh dir: `mkdir ~/.ssh`
-upload the id_rsa_ds file to your .ssh dir  (get the private key as part of your installation package)
-start the ssh agent and add the ssh key:
+change to sudo user: `sudo -s`
 
-### 2 - start your queue server
+navigate to the repo `cd ~/ds_deployment/ds_develop`
 
-upload the install_prod_queue.sh from your installation package to your server to the `~` directory
-
-and change the rights to execute `chmod +x ~/install_prod_queue.sh`
+change the rights to execute `chmod +x ~/install_prod_queue.sh`  (note: a queue update is the same as a new installation)
 
 change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod_queue.sh`
 
+
+### 2 - Static update
+
+If you have been given a new virtual machine to install please proceed as follows:
+
+Start the virtual machine and login via ssh, then:
+
+change to sudo user: `sudo -s`
+
+navigate to the repo `cd ~/ds_deployment/ds_develop`
+
+open the configure_prod_queue.sh and *change the configuration information* to your server requirements,
+
+change the rights to execute `chmod +x ~/configure_prod_queue.sh`  (note: a queue update is the same as a new installation)
+
+change your configurations in the configure_prod_queue.sh file of this repository and then execute `./configure_prod_queue.sh`
 
 #### working with the queue:
 
