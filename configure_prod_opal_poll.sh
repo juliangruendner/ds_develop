@@ -10,16 +10,13 @@ export R_SERVER_HOST='datashield_rserver'
 
 # install opal
 cd ~/ds_deployment/ds_develop/datashield_docker
-./install_prod.sh
+./configure_prod.sh
 
 
 # start the ds_poll_monitor_server
 printf "######################\n Installing Poll server and GUI ... \n######################\n\n"
 
 cd ~/ds_deployment/ds_develop/ds_poll_monitor_server
-mkdir ds_poll_gui/poll-monitor
-apt-get update
-apt-get -y install zip
 ./deploy_new_gui.sh
 ./start_prod.sh
 
