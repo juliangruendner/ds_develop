@@ -9,7 +9,7 @@
 # if not set the default value is 10:10  (10 seconds) and (10 seconds)
 ##
 
-# TIMEOUT_QUEUE_AND_POLL='-t 10:10'
+# export TIMEOUT_QUEUE_AND_POLL='-t 10:10'
 
 ## Allowed Ips
 # If the ALLOWED_IPS is not set the queue server is open to all ip addresses, to make the mechanism safer restrict the queue to certain ip adresses,
@@ -18,7 +18,7 @@
 # to function.
 ##
 
-#ALLOWED_IPS='-c 140.0.0.1,140.0.0.1'
+# export ALLOWED_IPS='-c 140.0.0.1,140.0.0.1'
 
 ### END CONFIGURATIONS ###
 
