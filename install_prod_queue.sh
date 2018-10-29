@@ -36,6 +36,7 @@ cd ds_develop
 ./gitUpdate.sh
 
 
-# start the queue
+# (re-)start the queue
 cd ds_queue
+./stop.prod.sh
 ./start.prod.sh
