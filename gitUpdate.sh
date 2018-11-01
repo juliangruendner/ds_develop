@@ -17,4 +17,4 @@ do
   fi
 done
 
-ls -d */ | grep '\<ds\|datashield_docker' | xargs -P10 -I{} git --git-dir={}/.git --work-tree=$PWD/{} pull origin master
+ls -d */ | grep '\<ds\|datashield_docker' | xargs -P10 -I{} git --git-dir={}/.git --work-tree=$PWD/{} pull
