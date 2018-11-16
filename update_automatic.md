@@ -20,7 +20,7 @@ change to sudo `sudo -s`
 
 navigate to the repo `cd ~/ds_deployment/ds_develop`
 
-*open the update_prod_opal_poll.sh and change the configuration information* to your server requirements,
+*open the opal_poll.config file and change the configuration information* to your server requirements,
 
 then execute `./update_prod_opal_poll.sh` in this repo.
 
@@ -35,7 +35,7 @@ change to sudo `sudo -s`
 
 navigate to the repo `cd ~/ds_deployment/ds_develop`
 
-*open the configure_prod_opal_poll.sh and change the configuration information* to your server requirements,
+*open the opal_poll.config file and change the configuration information* to your server requirements,
 
 then execute `./configure_prod_opal_poll.sh` in this repo
 
@@ -56,7 +56,7 @@ navigate to the repo `cd ~/ds_deployment/ds_develop`
 
 change the rights to execute `chmod +x ~/install_prod_queue.sh`  (note: a queue update is the same as a new installation)
 
-change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod_queue.sh`
+*open the queue.config file and change the configuration information* and then execute `./install_prod_queue.sh`
 
 
 ### 2 - Static update
@@ -73,7 +73,7 @@ open the configure_prod_queue.sh and *change the configuration information* to y
 
 change the rights to execute `chmod +x ~/configure_prod_queue.sh`  (note: a queue update is the same as a new installation)
 
-change your configurations in the configure_prod_queue.sh file of this repository and then execute `./configure_prod_queue.sh`
+*open the queue.config file and change the configuration information* and then execute `./configure_prod_queue.sh`
 
 #### working with the queue:
 

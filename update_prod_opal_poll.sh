@@ -1,9 +1,9 @@
+#!/bin/bash
+
 # this file lets you install opal and the poll service
 
-# add your configuration information here
-OPAL_SERVER_IP='127.0.0.1' # Ip address of this server - default is localhost
-export OPAL_ADMIN_PASS='password'
-export R_SERVER_HOST='datashield_rserver'
+### add your configuration information here
+source ./opal_poll.config
 
 
 # activate ssh agent for update

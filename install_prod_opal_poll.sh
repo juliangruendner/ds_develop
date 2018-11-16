@@ -1,10 +1,8 @@
+#!/bin/bash
+
 # this file lets you install opal and the poll service
 
-# add your configuration information here
-OPAL_SERVER_IP='127.0.0.1' # Ip address of this server - default is localhost
-export OPAL_ADMIN_PASS='password'
-export R_SERVER_HOST=${R_SERVER_HOST:='datashield_rserver'} # configure R server host
-
+source ./opal_poll.config
 
 # inistialise ssh to allow access to private github repository
 cd ~/.ssh

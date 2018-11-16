@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # specify your tagname, and description below
 TAGNAME='v0.0.1'

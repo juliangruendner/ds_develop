@@ -1,18 +1,14 @@
-# this file lets you install opal and the poll service
+#!/bin/bash
 
-# add your configuration information here
-OPAL_SERVER_IP='127.0.0.1' # Ip address of this server - default is localhost
-export OPAL_ADMIN_PASS='password'
-export R_SERVER_HOST='datashield_rserver'
+# this file installs opal and the poll service
+source ./opal_poll.config
 
-
-
-# install opal
+printf "######################\n Configuring Opal \n######################\n\n"
 cd ~/ds_deployment/ds_develop/datashield_docker
 ./configure_prod.sh
 
 
-# start the ds_poll_monitor_server
+
 printf "######################\n Installing Poll server and GUI ... \n######################\n\n"
 
 cd ~/ds_deployment/ds_develop/ds_poll_monitor_server

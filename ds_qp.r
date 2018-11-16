@@ -19,8 +19,8 @@ server <- c("datashield_opal")
 # note the datashield_opal only works from inside this docker container
 url <- c("https://localhost:8001")
 # ^^^ Note this specifies the port number
-user <- "administrator"
-password <- "password"
+user <- "test"
+password <- "test123"
 table <- c("test.LifeLines")
 # ^^^ note that this reflects the folder hierarchy that can be seen via the OPAL web interface
 
