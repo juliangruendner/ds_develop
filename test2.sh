@@ -1,3 +1,0 @@
-
-
-echo $OPAL_ADMIN_PASS
