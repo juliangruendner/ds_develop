@@ -52,11 +52,12 @@ mkdir ds_poll_gui/poll-monitor
 apt-get update
 apt-get -y install zip
 ./deploy_new_gui.sh
+./rebuild.sh
 ./start_prod.sh
 
 # change the configuration for the gui so that it communicates with the right server
-cd ~/ds_deployment/ds_develop/ds_poll_monitor_server/ds_poll_gui/poll-monitor
-sed -i "s/<replace_prod_server_url>/$OPAL_SERVER_IP/g" main.*
+#cd ~/ds_deployment/ds_develop/ds_poll_monitor_server/ds_poll_gui/poll-monitor
+#sed -i "s/<replace_prod_server_url>/$OPAL_SERVER_IP/g" main.*
 
 cd  ~/ds_deployment/ds_develop/datashield_docker
 ./stop_prod.sh
