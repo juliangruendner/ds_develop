@@ -13,9 +13,9 @@
 create a .ssh dir: `mkdir ~/.ssh`
 upload the id_rsa_ds file to your .ssh dir  (get the private key as part of your installation package)
 
-upload the install_prod_opal_poll.sh from your installation package to your server to the `~` directory
+upload the prepare_repository_and_server.sh from your installation package to your server to the `~` directory
 
-and change the rights to exectute `chmod +x ~/install_prod_opal_poll.sh`
+and change the rights to execute `chmod +x ~/prepare_repository_and_server.sh` and execute the `prepare_repository_and_server.sh`
 
 ### 2 install opal with R server and test data + the poll mechanism with gui
 
@@ -25,12 +25,9 @@ and change the rights to exectute `chmod +x ~/install_prod_opal_poll.sh`
 
 then execute `./install_prod_opal_poll.sh` in this repo
 
-
 in your browser open the poll mechanism monitor:
 `<server ip of current server>:80/poll-monitor`
 you should now see the poll monitor gui, which lets you control the poll thread
-
-
 
 ## Install your queue server
 
@@ -47,9 +44,9 @@ start the ssh agent and add the ssh key:
 
 ### 2 - start your queue server
 
-upload the install_prod_queue.sh from your installation package to your server to the `~` directory
+upload the prepare_repository_and_server.sh from your installation package to your server to the `~` directory
 
-and change the rights to execute `chmod +x ~/install_prod_queue.sh`
+and change the rights to execute `chmod +x ~/prepare_repository_and_server.sh` then execute the `prepare_repository_and_server.sh`
 
 *open the queue.config file and change the configuration information* to your server requirements,
 
