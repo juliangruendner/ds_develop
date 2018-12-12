@@ -12,6 +12,8 @@ cd ~/ds_deployment
 git clone git@github.com:juliangruendner/ds_develop.git
 cd ds_develop
 ./gitUpdate.sh
+git update-index --assume-unchanged /opal_poll.config
+git update-index --assume-unchanged /queue.config
 
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
