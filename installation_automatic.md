@@ -21,7 +21,7 @@ and change the rights to exectute `chmod +x ~/install_prod_opal_poll.sh`
 
 *please note that this script will download ca. 2GB of data*
 
-open the install_prod_opal_poll.sh and change the configuration information to your server requirements,
+*open the opal_poll.config file and change the configuration information* to your server requirements,
 
 then execute `./install_prod_opal_poll.sh` in this repo
 
@@ -51,8 +51,9 @@ upload the install_prod_queue.sh from your installation package to your server t
 
 and change the rights to execute `chmod +x ~/install_prod_queue.sh`
 
-change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod_queue.sh`
+*open the queue.config file and change the configuration information* to your server requirements,
 
+change your configurations in the install_prod_queue.sh file of this repository and then execute `./install_prod_queue.sh`
 
 #### working with the queue:
 
