@@ -27,5 +27,6 @@ fi
 
 # (re-)start the queue
 cd ds_queue
+./rebuild.sh
 ./stop.prod.sh
 ./start.prod.sh
