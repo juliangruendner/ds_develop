@@ -6,5 +6,5 @@
 /ds_poll_monitor_gui
 /ds_test
 /.vscode
-/opal_poll.config
-/queue.config
+opal_poll.config
+queue.config
