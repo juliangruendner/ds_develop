@@ -40,7 +40,9 @@ fi
 printf "######################\n\n\n"
 
 # install opal
-cd ~/ds_deployment/ds_develop/ds_opal
+cd ~/ds_deployment/ds_develop/ds_opal/opal_with_init
+./buildNewImage.sh
+cd ..
 ./stop_prod.sh
 ./start_prod.sh
 .echo "waiting 60 seconds for opal to start ..."
