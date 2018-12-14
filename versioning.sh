@@ -4,7 +4,7 @@
 TAGNAME='v0.0.2'
 DESCRIPTION='first dockerised version, includes improvements and bugfixes for opal and autogeneration of certificate files for queue'
 
-repos=("ds_common" "ds_poll" "ds_queue" "datashield_docker" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui")
+repos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui")
 baseDir=$(pwd)
 
 printf "****versioning base repository****\n"

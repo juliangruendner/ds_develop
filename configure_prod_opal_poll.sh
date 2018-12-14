@@ -4,7 +4,7 @@
 source ./opal_poll.config
 
 printf "######################\n Configuring Opal \n######################\n\n"
-cd ~/ds_deployment/ds_develop/datashield_docker
+cd ~/ds_deployment/ds_develop/ds_opal
 ./configure_prod.sh
 
 
@@ -14,7 +14,7 @@ printf "######################\n Installing Poll server and GUI ... \n##########
 cd ~/ds_deployment/ds_develop/ds_poll_monitor_server
 ./deploy_new_gui.sh
 ./start_prod.sh
-cd  ~/ds_deployment/ds_develop/datashield_docker
+cd  ~/ds_deployment/ds_develop/ds_opal
 ./stop_prod.sh
 ./start_prod.sh
 

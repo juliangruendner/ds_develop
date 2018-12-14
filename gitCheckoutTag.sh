@@ -1,7 +1,7 @@
 #!/bin/bash
 
 githubBase="git@github.com:juliangruendner/"
-mlServiceRepos=("ds_common" "ds_poll" "ds_queue" "datashield_docker" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui")
+mlServiceRepos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui")
 baseDir=$(pwd)
 
 for repoName in ${mlServiceRepos[@]}

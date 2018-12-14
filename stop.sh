@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd datashield_docker
+cd ds_opal
 ./stop.sh
 cd ..
 

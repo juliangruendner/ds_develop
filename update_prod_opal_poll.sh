@@ -28,7 +28,7 @@ fi
 
 
 # install opal
-cd ~/ds_deployment/ds_develop/datashield_docker
+cd ~/ds_deployment/ds_develop/ds_opal
 ./update_prod.sh
 
 
@@ -44,7 +44,7 @@ cd ~/ds_deployment/ds_develop/ds_poll_monitor_server
 cd ~/ds_deployment/ds_develop/ds_poll_monitor_server/ds_poll_gui/poll-monitor
 sed -i "s/<replace_prod_server_url>/$OPAL_SERVER_IP/g" main.*
 
-cd  ~/ds_deployment/ds_develop/datashield_docker
+cd  ~/ds_deployment/ds_develop/ds_opal
 ./stop_prod.sh
 ./start_prod.sh
 

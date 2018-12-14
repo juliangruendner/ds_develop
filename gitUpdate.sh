@@ -1,7 +1,7 @@
 #!/bin/bash
 
 githubBase="git@github.com:juliangruendner/"
-mlServiceRepos=("ds_common" "ds_poll" "ds_queue" "datashield_docker" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui")
+mlServiceRepos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui")
 baseDir=$(pwd)
 
 echo "****updating base repo Develop****"
@@ -19,4 +19,4 @@ do
   fi
 done
 
-ls -d */ | grep '\<ds\|datashield_docker' | xargs -P10 -I{} git --git-dir={}/.git --work-tree=$PWD/{} pull
+ls -d */ | grep '\<ds\|ds_opal' | xargs -P10 -I{} git --git-dir={}/.git --work-tree=$PWD/{} pull

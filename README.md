@@ -8,7 +8,7 @@ It includes a `/gitUpdate.sh`, which pulls the following subrepositories:
 - ds_poll
 - ds_queue
 - ds_common
-- datashield_docker
+- ds_opal
 
 ds_queue implements a queue server, which recieves requests from a datashield client and stores them in memory to be polled and processed by the ds_poll thread
 
@@ -17,13 +17,13 @@ executed, once executed it relays the response back to the queue server.
 
 ds_common contains common elements needed by ds_queue as well as ds_poll.
 
-datashield_docker is a docker configuration of a datashield/opal server, which comes with LifeLines.sav test data needed.
+ds_opal is a docker configuration of a datashield/opal server, which comes with LifeLines.sav test data needed.
 This repository has been set up to test the queue-poll mechanism with a real live instance.
 
 
 ## Running and testing the queue-poll mechanism
 
-please note that before running the complete queue-poll mechanism you need to navigate to the datashield_docker repository and follow the readme there to set up your datashield/opal environment.
+please note that before running the complete queue-poll mechanism you need to navigate to the ds_opal repository and follow the readme there to set up your datashield/opal environment.
 
 after this you can run the `./start.sh` in this repository to setup your development environment.
 you should now have a running opal environment (check using `docker ps`),
