@@ -1,0 +1,54 @@
+version: '3.5'
+services:
+  opal:
+    container_name: datashield_opal
+    image: ds_opal:latest
+    ports:
+    - "8843:8443"
+    - "8880:8080"
+    networks:
+    - opal_net
+    environment:
+    - OPAL_ADMINISTRATOR_PASSWORD=${OPAL_ADMIN_PASS}
+    - RSERVER_PORT_6312_TCP_ADDR=${R_SERVER_HOST}
+    - MONGODBHOST=${OPAL_MONGODB_HOST}
+    - INITTESTDATA=true
+    volumes:
+    - ./ds_data/opal:/srv
+  rserver:
+    container_name: datashield_rserver
+    image: obiba/opal-rserver:latest
+    ports:
+    - "6612:6312"
+    - "6611:6311"
+    networks:
+    - opal_net
+  mongo:
+    container_name: datashield_mongo
+    image: mongo
+    volumes:
+    - ./ds_data/mongo_data:/data/db
+    networks:
+    - opal_net
+  poll_gui_server:
+    container_name: poll_gui_server
+    restart: unless-stopped
+    image: ds_poll_gui
+    environment:
+    - OPAL_SERVER_IP=${OPAL_SERVER_IP}
+    ports:
+      - "80:80"
+  poll_server:
+    container_name: poll_server
+    image: ds_poll
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    networks:
+      - opal_net
+    volumes:
+      - ./ds_poll:/root/ds_poll
+
+networks:
+  opal_net:
+    name: ds_opal_opal_net
