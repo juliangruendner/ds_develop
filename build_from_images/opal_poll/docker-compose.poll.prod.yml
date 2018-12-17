@@ -4,7 +4,7 @@ services:
     container_name: datashield_opal
     image: ds_opal:latest
     ports:
-    - "8843:8443"
+    - "443:8443"
     networks:
     - opal_net
     environment:
@@ -46,7 +46,7 @@ services:
     networks:
       - opal_net
     volumes:
-      - ./ds_poll:/root/ds_poll
+      - ./poll_logging:/root/ds_poll/logging
 
 networks:
   opal_net:

@@ -17,3 +17,8 @@ if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
 fi
 
 ./start_prod.sh
+
+printf "\n the first time opal starts it takes a while to be ready as we are loading test data and configuring the servers for you, so please be patient\n"
+
+printf "\n - visit $OPAL_SERVER_IP:80/poll-monitor in your browser to access the poll server user interface \n"
+printf "\n - visit https://$OPAL_SERVER_IP:8843 in your browser to access the opal server user interface \n"

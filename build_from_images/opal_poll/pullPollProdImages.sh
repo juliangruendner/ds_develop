@@ -24,10 +24,6 @@ printf "pulling image: $REGISTRY_PREFIX/ds_poll$QP_VERSION_TAG \n"
 docker pull $REGISTRY_PREFIX/ds_poll$QP_VERSION_TAG
 docker tag $REGISTRY_PREFIX/ds_poll$QP_VERSION_TAG ds_poll:latest
 
-printf "pulling image: $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG \n"
-docker pull $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG
-docker tag $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG ds_queue:latest
-
 printf "finished pulling all images for DS-QP ....\n"
 
 
