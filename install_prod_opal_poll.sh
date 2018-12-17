@@ -74,4 +74,4 @@ cd  ~/ds_deployment/ds_develop/ds_opal
 printf "\n\n######################\n Setup Complete \n######################\n\n"
 
 printf "\n - visit $OPAL_SERVER_IP:80 in your browser to access the poll server user interface \n"
-printf "\n - visit $OPAL_SERVER_IP:8880 in your browser to access the opal server user interface \n"
+printf "\n - visit https://$OPAL_SERVER_IP:8843 in your browser to access the opal server user interface \n"
