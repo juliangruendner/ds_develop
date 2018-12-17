@@ -5,7 +5,6 @@ services:
     image: ds_opal:latest
     ports:
     - "8843:8443"
-    - "8880:8080"
     networks:
     - opal_net
     environment:
