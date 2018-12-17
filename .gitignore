@@ -8,3 +8,4 @@
 /.vscode
 opal_poll.config
 queue.config
+/build_from_images/opal_poll.config

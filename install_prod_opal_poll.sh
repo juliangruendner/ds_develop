@@ -41,6 +41,8 @@ printf "######################\n\n\n"
 
 # install opal
 cd ~/ds_deployment/ds_develop/ds_opal/opal_with_init
+
+
 ./buildNewImage.sh
 cd ..
 ./stop_prod.sh
