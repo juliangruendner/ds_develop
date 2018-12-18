@@ -10,3 +10,7 @@ export QP_DOCKER_REGISTRY_PW=''  #  password, e.g. 'test123!'
 export OPAL_ADMIN_PASS='password'
 export R_SERVER_HOST='datashield_rserver'
 export OPAL_MONGODB_HOST='datashield_mongo'
+
+export POLL_QUEUE_SERVER='' # e.g. '-q 123.12.12.12:443' , queue server host and port(usually 443)
+export POLL_OPAL_SERVER=''  # e.g. '-o 123.12.12.12:443' , opal server host and port, if left blank defaults to datashield_opal:8443, which is correct for a pure docker setup
+export POLL_THREADS=''      # e.g. '-t 5' number of poll threads defaults to 2
