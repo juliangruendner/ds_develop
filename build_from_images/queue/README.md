@@ -1,7 +1,7 @@
 # DS Q-P + OPAL installation guide
 
 
-## Install your poll thread, opal server and poll monitor server on a server
+## Install your queue server on a server
 
 The Q-P datashield opal application comes packed in docker images, which are automatically donwloaded from your registry of choice.
 
