@@ -9,7 +9,6 @@ if [[ $(which docker) ]]; then
     
 else
     echo "docker not installed, installing docker:"
-    cd ~/ds_deployment/ds_develop
     ./install_docker.sh
 fi
 

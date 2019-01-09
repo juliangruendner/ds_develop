@@ -5,6 +5,7 @@
 /ds_poll_monitor_server
 /ds_poll_monitor_gui
 /ds_test
+/ds_rstudio
 /.vscode
 opal_poll.config
 queue.config
