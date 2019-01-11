@@ -5,10 +5,16 @@
 This repository is a wrapper for the datashield repositories needed to implement a queue-poll mechanism.
 
 It includes a `/gitUpdate.sh`, which pulls the following subrepositories:
+
+- ds_opal
+- ds_common
 - ds_poll
 - ds_queue
-- ds_common
-- ds_opal
+- ds_poll_monitor_gui
+- ds_poll_monitor_server
+- ds_rstudio
+- ds_test
+
 
 ds_queue implements a queue server, which recieves requests from a datashield client and stores them in memory to be polled and processed by the ds_poll thread
 
@@ -17,9 +23,7 @@ executed, once executed it relays the response back to the queue server.
 
 ds_common contains common elements needed by ds_queue as well as ds_poll.
 
-ds_opal is a docker configuration of a datashield/opal server, which comes with LifeLines.sav test data needed.
-This repository has been set up to test the queue-poll mechanism with a real live instance.
-
+ds_opal is a docker configuration of a datashield/opal server, which comes with test data pre-installed
 
 ## Running and testing the queue-poll mechanism
 
