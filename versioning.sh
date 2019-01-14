@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # specify your tagname, and description below
-TAGNAME='v0.0.3'
-DESCRIPTION='first complete docker version with images for opal and a production installation package creator'
+TAGNAME='v0.1.0'
+DESCRIPTION='first official version with licenses included'
 
 repos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui" "ds_rstudio")
 baseDir=$(pwd)
