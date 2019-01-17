@@ -27,7 +27,11 @@ It includes a `/gitUpdate.sh`, which pulls the following subrepositories:
 - ds_rstudio
 - ds_test
 
-## start all the neccessary docker containers
+## initialise your develop environment and start all neccessary docker containers
+
+To spin up our development environment we need to first build some basic containers, which we will use to build upon.
+
+To initialise those containers you have to execute the ./initialise_develop.sh ones, when u download this repository.
 
 For convenience I have provided a start.sh and stop.sh to start the docker containers of this project and to stop them.
 If executed it starts the following containers:
