@@ -14,6 +14,12 @@ then execute `./install_prod_queue.sh` in this repo.
 Thats it, your queue server is now installed.
 
 
+### Install own SSL certificate
+
+To install your own SSL certificate open the file ./auth/queue.pem, truncate it and paste your certificate .pem file. Save the changes and restart the
+queue server using first the ./stop_prod.sh and then the ./start_prod.sh files.
+
+
 
 
 

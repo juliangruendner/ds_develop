@@ -1,1 +1,1 @@
-docker-compose stop
+docker-compose -f  docker-compose.analysis.prod stop

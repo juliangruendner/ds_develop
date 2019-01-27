@@ -15,7 +15,7 @@ fi
 
 if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
     printf "**** registry found pulling images from $QP_DOCKER_REGISTRY_PREFIX ...\n\n"
-   ./pullQueueProdImages.sh $QP_DOCKER_REGISTRY_PREFIX $QP_DOCKER_REGISTRY_USER $QP_DOCKER_REGISTRY_PW
+   ./pullAnalysisProdImages.sh $QP_DOCKER_REGISTRY_PREFIX $QP_DOCKER_REGISTRY_USER $QP_DOCKER_REGISTRY_PW
 fi
 
 ./start_prod.sh
