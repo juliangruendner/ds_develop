@@ -2,9 +2,9 @@
 
 ### add your configuration information here
 
-export QP_VERSION_TAG='' # version of qp and ds system - e.g. v0.0.1 - default is empty => master = newest
+export QP_VERSION_TAG='v0.1.0' # version of qp and ds system - e.g. v0.0.1 - default is empty => master = newest
 export OPAL_SERVER_IP='127.0.0.1' # Ip address of this server - default is localhost
-export QP_DOCKER_REGISTRY_PREFIX='' # registry host:port  e.g. 'testregistry.de:5043'
+export QP_DOCKER_REGISTRY_PREFIX='docker.miracum.org/datashield_miracum' # registry host:port  e.g. 'testregistry.de:5043'
 export QP_DOCKER_REGISTRY_USER='' # user e.g. 'test'
 export QP_DOCKER_REGISTRY_PW=''  #  password, e.g. 'test123!'
 export OPAL_ADMIN_PASS='password'
