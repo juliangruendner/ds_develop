@@ -7,8 +7,11 @@ if [ -n $QP_VERSION_TAG ]; then
     QP_VERSION_TAG=":$QP_VERSION_TAG"
 fi
 
-printf "logging into registry $REGISTRY_PREFIX ...\n"
-docker login --username=$REGISTRY_USER --password=$REGISTRY_PW "https://$REGISTRY_PREFIX"
+
+if [ -n "$REGISTRY_USER" ]  && [ -n "$REGISTRY_PREFIX" ]; then
+    printf "logging into registry $REGISTRY_PREFIX ...\n"
+    docker login --username=$REGISTRY_USER --password=$REGISTRY_PW "https://$REGISTRY_PREFIX"
+fi
 
 printf "pulling QP images ...\n"
 
