@@ -12,7 +12,11 @@ docker login --username=$REGISTRY_USER --password=$REGISTRY_PW "https://$REGISTR
 
 printf "building images ...\n"
 
-cd ds_opal/opal_with_init
+cd ds_rstudio
+printf "building image: $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG \n"
+docker build -f Dockerfile.rstudio.ds -t $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG .
+
+cd ../ds_opal/opal_with_init
 printf "building image: $REGISTRY_PREFIX/ds_opal$QP_VERSION_TAG \n"
 docker build -f Dockerfile -t $REGISTRY_PREFIX/ds_opal$QP_VERSION_TAG .
 
@@ -28,7 +32,12 @@ printf "building image: $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG \n"
 docker build -f Dockerfile.queue -t $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG .
 
 
+
+
 printf "pushing images ...\n"
+
+printf "pushing image: $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG \n"
+docker push $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG
 
 printf "pushing image: $REGISTRY_PREFIX/ds_opal$QP_VERSION_TAG \n"
 docker push $REGISTRY_PREFIX/ds_opal$QP_VERSION_TAG
@@ -42,4 +51,4 @@ docker push $REGISTRY_PREFIX/ds_poll$QP_VERSION_TAG
 printf "pushing image: $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG \n"
 docker push $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG
 
-printf "finisehd building an pushing all images for DS-QP ....\n"
+printf "finished building an pushing all images for DS-QP ....\n"

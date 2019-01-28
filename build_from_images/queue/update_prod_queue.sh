@@ -17,11 +17,8 @@ if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
 fi
 
 
-docker-compose -f docker-compose.poll.prod.yml down
+docker-compose -f docker-compose.prod.yml down
 
 ./start_prod.sh
 
-printf "\n the first time opal starts it takes a while to be ready as we are loading test data and configuring the servers for you, so please be patient\n"
-
-printf "\n - visit $OPAL_SERVER_IP:8443 in your browser to access the poll server user interface \n"
-printf "\n - visit https://$OPAL_SERVER_IP:443 in your browser to access the opal server user interface \n"
+printf "\n - check if queue is running by typing 'docker ps' into the command line \n"

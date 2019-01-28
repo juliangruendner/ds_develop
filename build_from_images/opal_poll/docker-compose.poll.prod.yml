@@ -37,13 +37,16 @@ services:
     environment:
     - OPAL_SERVER_IP=${OPAL_SERVER_IP}
     ports:
-      - "80:80"
+      - "8443:443"
+    networks:
+     - opal_net
+    volumes:
+     - ./auth/opalcert.pem:/etc/nginx/conf.d/pollcert.pem
+     - ./auth/opalkey.pem:/etc/nginx/conf.d/pollkey.pem
   poll_server:
     container_name: poll_server
     image: ds_poll
     restart: unless-stopped
-    ports:
-      - "5000:5000"
     networks:
       - opal_net
     volumes:

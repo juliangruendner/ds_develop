@@ -15,9 +15,9 @@ fi
 
 printf "pulling ds analysis images ...\n"
 
-printf "pulling image: $REGISTRY_PREFIX/ds_analyis$QP_VERSION_TAG \n"
-docker pull $REGISTRY_PREFIX/ds_analyis$QP_VERSION_TAG
-docker tag $REGISTRY_PREFIX/ds_analyis$QP_VERSION_TAG ds_analyis:latest
+printf "pulling image: $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG \n"
+docker pull $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG
+docker tag $REGISTRY_PREFIX/ds_analysis$QP_VERSION_TAG ds_analysis:latest
 
 printf "finished pulling all images for datashield analysis Server ....\n"
 

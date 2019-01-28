@@ -19,3 +19,6 @@ if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
 fi
 
 ./start_prod.sh
+
+
+printf "\n - check if queue is running by typing 'docker ps' into the command line \n"

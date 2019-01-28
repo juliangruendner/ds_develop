@@ -21,5 +21,12 @@ To install your own SSL certificate:
 2. open the file ./auth/rstudiokey.pem, truncate it and paste your key .pem file, then save the changes 
 3. Finally, restart the analysis server using first the ./stop_prod.sh and then the ./start_prod.sh files.
 
+### The config file explained
+
+export QP_VERSION_TAG='v0.1.0' # version of qp and ds system - e.g. v0.0.1 - default is empty => master = newest
+export QP_DOCKER_REGISTRY_PREFIX='docker.miracum.org/datashield_miracum' # registry host:port  e.g. 'testregistry.de:5043'
+export QP_DOCKER_REGISTRY_USER='' # user e.g. 'test'
+export QP_DOCKER_REGISTRY_PW=''  #  password, e.g. 'test123!'
+export RSTUDIO_USERS='datashield,password' # create RSTUDIO users ";" separated e.g. 'user,pw;user,pw' - it is important to set at least one user and to choose a secure password
 
 
