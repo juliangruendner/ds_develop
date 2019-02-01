@@ -1,4 +1,4 @@
-source ./opal_poll.config
+source ./queue.config
 
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
@@ -13,7 +13,7 @@ fi
 
 if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
     printf "**** registry fround pulling images from $QP_DOCKER_REGISTRY_PREFIX ...\n\n"
-   ./pullPollProdImages.sh $QP_DOCKER_REGISTRY_PREFIX $QP_DOCKER_REGISTRY_USER $QP_DOCKER_REGISTRY_PW
+   ./pullQueueProdImages.sh $QP_DOCKER_REGISTRY_PREFIX $QP_DOCKER_REGISTRY_USER $QP_DOCKER_REGISTRY_PW
 fi
 
 
