@@ -32,11 +32,12 @@ export OPAL_MONGODB_HOST='datashield_mongo' # host of the mongo database used
 export POLL_QUEUE_SERVER='' # e.g. '-q 123.12.12.12:443' , queue server host and port(usually 443), the -q prefix is important
 export POLL_OPAL_SERVER=''  # e.g. '-o 123.12.12.12:443' , opal server host and port, if left blank defaults to '-o datashield_opal:8443', which is correct for a pure docker setup
 export POLL_THREADS=''      # e.g. '-t 5' number of poll threads defaults to 2
+export CHECK_SERVER_CERT='' # e.g. '-c' activate checking sever certificate - this adds extra security, however this results in your poll mechanism not working if your certificate is not correct
 
 
 ### Installing your own ssl certificate
 
-To install your own ssl certificate you can either use the user interface or the command line tools we have provided
+To install your own ssl certificate for opal you can either use the user interface or the command line tools we have provided
 
 - command line tools:
 1. exchange the opalcert.pem and opalkey.pem files with your own certificate files, but make sure, that the filename stays the same.
@@ -45,6 +46,15 @@ To install your own ssl certificate you can either use the user interface or the
 
 - opal user interface
 go to your opal server https://OPAL_SERVER_IP:443 and login as administrator using the password you set in the opal_poll.config file.
+
+
+Install the needed certificate authority certificates
+
+In order for the poll module to check the certificate of the server, it needs to trust the ca_certificate used by your queue server.
+To add a ca_cert (certificate authority ssl certificate) proceed as follows:
+1. open the ./auth/ca_certs folder and replace the opalcacert.crt and the queuecacert.crt with your own ca cert files.
+2. execute the ./addCaCertificates.sh  - your certificates should now be installed on your local machine
+
 
 
 
