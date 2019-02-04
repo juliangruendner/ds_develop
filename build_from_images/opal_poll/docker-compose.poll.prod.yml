@@ -51,6 +51,7 @@ services:
       - opal_net
     volumes:
       - ./poll_logging:/root/ds_poll/logging
+      - ./auth:/auth
 
 networks:
   opal_net:
