@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # specify your tagname, and description below
-TAGNAME='v0.1.0'
-DESCRIPTION='first official version with licenses included'
+TAGNAME='v0.5.0'
+DESCRIPTION='first full version with SSL certificates installation and installation package creation'
 
 repos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui" "ds_rstudio")
 baseDir=$(pwd)

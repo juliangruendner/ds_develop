@@ -1,7 +1,7 @@
 ### BEGIN CONFIGURATIONS ###
 # uncomment variables to set configuration
 
-export QP_VERSION_TAG='v0.1.3' # version of qp and ds system - e.g. v0.0.1 - default is empty => master = newest
+export QP_VERSION_TAG='v0.5.0' # version of qp and ds system - e.g. v0.0.1 - default is empty => master = newest
 export QP_DOCKER_REGISTRY_PREFIX='docker.miracum.org/datashield_miracum' # registry host:port  e.g. 'testregistry.de:5043'
 export QP_DOCKER_REGISTRY_USER='' # user e.g. 'test'
 export QP_DOCKER_REGISTRY_PW=''  #  password, e.g. 'test123!'
@@ -9,10 +9,14 @@ export QP_DOCKER_REGISTRY_PW=''  #  password, e.g. 'test123!'
 ## Timeout
 # TIMEOUT_QUEUE_AND_POLL sets the timeout for the queue
 # -t <requestTimeout:responseTimeout> , sets request and response timeout for the queue
-# if not set the default value is 10:10  (10 seconds) and (10 seconds)
+# if not set the default value is 10:10  (10 seconds) and (10 seconds) - these are not good for production settings,
+# especially if one is expecting larger execution times on the opal server the repsoneTimeout should be set higher
+# requestTimeout is the time after which the poll thread gets rejected if there is nothing in the queue
+# responseTimeout is the time after which the request sender gets a timeout if there is no response for the query
+# A responseTimeout of 43200 = 12 hours
 ##
 
-export TIMEOUT_QUEUE_AND_POLL='-t 1000:1000'
+export TIMEOUT_QUEUE_AND_POLL='-t 100:43200'
 
 ## Allowed Ips
 # If the ALLOWED_IPS is not set the queue server is open to all ip addresses, to make the mechanism safer restrict the queue to certain ip adresses,
