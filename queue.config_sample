@@ -13,10 +13,10 @@ export QP_DOCKER_REGISTRY_PW=''  #  password, e.g. 'test123!'
 # especially if one is expecting larger execution times on the opal server the repsoneTimeout should be set higher
 # requestTimeout is the time after which the poll thread gets rejected if there is nothing in the queue
 # responseTimeout is the time after which the request sender gets a timeout if there is no response for the query
-# A responseTimeout of 43200 = 12 hours
+# A responseTimeout of 604800 seconds = 7 days
 ##
 
-export TIMEOUT_QUEUE_AND_POLL='-t 100:43200'
+export TIMEOUT_QUEUE_AND_POLL='-t 100:604800'
 
 ## Allowed Ips
 # If the ALLOWED_IPS is not set the queue server is open to all ip addresses, to make the mechanism safer restrict the queue to certain ip adresses,
