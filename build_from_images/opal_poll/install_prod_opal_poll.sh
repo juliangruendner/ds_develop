@@ -22,3 +22,4 @@ printf "\n the first time opal starts it takes a while to be ready as we are loa
 
 printf "\n - visit $OPAL_SERVER_IP:8443 in your browser to access the poll server user interface \n"
 printf "\n - visit https://$OPAL_SERVER_IP:443 in your browser to access the opal server user interface \n"
+

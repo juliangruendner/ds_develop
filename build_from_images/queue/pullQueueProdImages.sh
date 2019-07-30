@@ -18,6 +18,10 @@ printf "pulling image: $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG \n"
 docker pull $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG
 docker tag $REGISTRY_PREFIX/ds_queue$QP_VERSION_TAG ds_queue:latest
 
+printf "pulling image: $REGISTRY_PREFIX/nginx_queue$QP_VERSION_TAG \n"
+docker pull $REGISTRY_PREFIX/nginx_queue$QP_VERSION_TAG
+docker tag $REGISTRY_PREFIX/nginx_queue$QP_VERSION_TAG nginx_queue:latest
+
 printf "finished pulling all images for DS-QP ....\n"
 
 

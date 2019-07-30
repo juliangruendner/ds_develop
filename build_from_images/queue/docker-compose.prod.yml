@@ -1,6 +1,22 @@
 version: '2.0'
 
 services:
+  nginx_queue:
+    container_name: nginx_queue
+    restart: unless-stopped
+    image: nginx_queue:latest
+    ports:
+      - "443:443"
+    networks:
+      - queue_net
+    environment:
+      - ALLOWED_IPS=${ALLOWED_IPS}
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      - ALLOWED_IPS=${ALLOWED_IPS} # ALLOWED_IPS='-c 103.102.323.23'
+    
 
   queue_server:
     container_name: queue_server_prod
@@ -11,6 +27,8 @@ services:
     - TIMEOUT_QUEUE_AND_POLL=${TIMEOUT_QUEUE_AND_POLL} # define timeout for requests
     - ALLOWED_IPS=${ALLOWED_IPS} # ALLOWED_IPS='-c 103.102.323.23'
     - LOG_LEVEL='-l 1' # define log level
-    ports:
-      - "443:443"
+    networks:
+      - queue_net
 
+networks:
+  queue_net:
