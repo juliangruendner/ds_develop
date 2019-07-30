@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # specify your tagname, and description below
-TAGNAME='v0.5.0'
-DESCRIPTION='first full version with SSL certificates installation and installation package creation'
+TAGNAME='v0.6.0'
+DESCRIPTION='second proper release'
 
 repos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui" "ds_rstudio")
 baseDir=$(pwd)
@@ -15,8 +15,8 @@ for repoName in ${repos[@]}
 do
   printf "**** Tagging repository $repoName **** \n" 
   cd $repoName
-  git tag -a $TAGNAME -m "$DESCRIPTION"
-  git push origin $TAGNAME
+  git tag -af $TAGNAME -m "$DESCRIPTION"
+  git push -f origin $TAGNAME
   #git tag -d $TAGNAME
   cd ..
 done

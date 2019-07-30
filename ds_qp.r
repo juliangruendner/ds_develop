@@ -17,7 +17,8 @@ library(dsModellingClient)
 begin = as.numeric(Sys.time())
 server <- c("datashield_opal")
 # note the datashield_opal only works from inside this docker container
-url <- c("https://localhost:8001")
+url <- c("https://localhost:443")
+
 # ^^^ Note this specifies the port number
 user <- "test"
 password <- "test123"
@@ -32,7 +33,9 @@ logindata <- data.frame(server,url,user,password,table)
 opals <- datashield.login(logins=logindata, assign = TRUE)
 
 #geht
-ds.glm(formula='D$SMK31~D$GESLACHT+D$LENGTE', family='binomial', datasources = opals)
+mean <- ds.mean(x = 'D$GEWICHT', type = "combine", datasources = opals)
+print(mean)
+#ds.glm(formula='D$SMK31~D$GESLACHT+D$LENGTE', family='binomial', datasources = opals)
 
 datashield.logout(opals)
 timeTaken = as.numeric(Sys.time()) - begin
