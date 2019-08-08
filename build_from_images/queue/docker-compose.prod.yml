@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     image: nginx_queue:latest
     ports:
-      - "443:443"
+      - "443:8443"
     networks:
       - queue_net
     environment:
@@ -17,7 +17,6 @@ services:
     environment:
       - ALLOWED_IPS=${ALLOWED_IPS} # ALLOWED_IPS='-c 103.102.323.23'
     
-
   queue_server:
     container_name: queue_server_prod
     image: ds_queue:latest
