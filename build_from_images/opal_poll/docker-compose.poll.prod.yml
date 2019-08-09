@@ -18,9 +18,6 @@ services:
   rserver:
     container_name: datashield_rserver
     image: obiba/opal-rserver:latest
-    ports:
-    - "6612:6312"
-    - "6611:6311"
     networks:
     - opal_net
   mongo:
