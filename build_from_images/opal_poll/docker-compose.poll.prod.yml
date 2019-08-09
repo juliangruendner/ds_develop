@@ -30,19 +30,19 @@ services:
     - ./ds_data/mongo_data:/data/db
     networks:
     - opal_net
-  poll_gui_server:
-    container_name: poll_gui_server
-    restart: unless-stopped
-    image: ds_poll_gui
-    environment:
-    - OPAL_SERVER_IP=${OPAL_SERVER_IP}
-    ports:
-      - "8443:443"
-    networks:
-     - opal_net
-    volumes:
-     - ./auth/opalcert.pem:/etc/nginx/conf.d/pollcert.pem
-     - ./auth/opalkey.pem:/etc/nginx/conf.d/pollkey.pem
+  #poll_gui_server:
+   # container_name: poll_gui_server
+    #restart: unless-stopped
+    #image: ds_poll_gui
+    #environment:
+    #- OPAL_SERVER_IP=${OPAL_SERVER_IP}
+    #ports:
+    #  - "8443:443"
+    #networks:
+    # - opal_net
+    #volumes:
+    # - ./auth/opalcert.pem:/etc/nginx/conf.d/pollcert.pem
+    # - ./auth/opalkey.pem:/etc/nginx/conf.d/pollkey.pem
   poll_server:
     container_name: poll_server
     image: ds_poll

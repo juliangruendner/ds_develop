@@ -17,7 +17,7 @@ begin = as.numeric(Sys.time())
 server <- c("datashield_opal")
 # note the datashield_opal only works from inside this docker container
 #url <- c("http://localhost:8880")
-url <- c("https://localhost:8001")
+url <- c("https://localhost:8843")
 # ^^^ Note this specifies the port number
 user <- "test"
 password <- "test123"
