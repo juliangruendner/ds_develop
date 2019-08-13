@@ -2,7 +2,7 @@
 
 # specify your tagname, and description below
 TAGNAME='v0.6.0'
-DESCRIPTION='second proper release'
+DESCRIPTION='first installation with nginx as entrypoint and test package'
 
 repos=("ds_common" "ds_poll" "ds_queue" "ds_opal" "ds_test" "ds_poll_monitor_server" "ds_poll_monitor_gui" "ds_rstudio")
 baseDir=$(pwd)

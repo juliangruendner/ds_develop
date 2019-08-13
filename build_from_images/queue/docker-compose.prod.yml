@@ -12,7 +12,8 @@ services:
     environment:
       - ALLOWED_IPS=${ALLOWED_IPS}
     volumes:
-      - ./nginx/:/etc/nginx/conf.d
+      - ./nginx/queuecert.pem:/etc/nginx/conf.d/queuecert.pem
+      - ./nginx_queuekey.pem:/etc/nginx/conf.d/queuekey.pem
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     environment:
       - ALLOWED_IPS=${ALLOWED_IPS} # ALLOWED_IPS='-c 103.102.323.23'
