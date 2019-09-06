@@ -12,6 +12,12 @@ else
     ./install_docker.sh
 fi
 
+FILE=./nginx/dhparam.pem
+if [! -f "$FILE" ]; then
+    echo "Creating longer Diffie-Hellman Prime for extra security"
+    openssl dhparam -out ./nginx/dhparam.pem 4096
+fi
+
 
 if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
     printf "**** registry found pulling images from $QP_DOCKER_REGISTRY_PREFIX ...\n\n"

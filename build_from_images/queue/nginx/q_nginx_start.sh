@@ -3,7 +3,6 @@ ALLOWED_IPS=${ALLOWED_IPS:-""}
 
 echo $ALLOWED_IPS
 
-
 ips=${ALLOWED_IPS/-c /}
 ips=$(echo $ips | tr ",'" "\n")
 
