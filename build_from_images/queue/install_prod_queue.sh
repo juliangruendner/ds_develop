@@ -13,7 +13,7 @@ else
 fi
 
 FILE=./nginx/dhparam.pem
-if [! -f "$FILE" ]; then
+if [ ! -f "$FILE" ]; then
     echo "Creating longer Diffie-Hellman Prime for extra security"
     openssl dhparam -out ./nginx/dhparam.pem 4096
 fi
