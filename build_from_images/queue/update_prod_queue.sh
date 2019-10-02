@@ -1,4 +1,6 @@
-source ./queue.config
+source /etc/dsqp/queue.config
+
+QP_HOME=${QP_HOME:-"$HOME/ds_deployment"}
 
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
@@ -15,7 +17,6 @@ if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
     printf "**** registry fround pulling images from $QP_DOCKER_REGISTRY_PREFIX ...\n\n"
    ./pullQueueProdImages.sh $QP_DOCKER_REGISTRY_PREFIX $QP_DOCKER_REGISTRY_USER $QP_DOCKER_REGISTRY_PW
 fi
-
 
 docker-compose -f docker-compose.prod.yml down
 

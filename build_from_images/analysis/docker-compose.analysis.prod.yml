@@ -6,8 +6,8 @@ services:
     ports:
       - 8787:8787
     volumes:
-      - ./auth/:/etc/nginx/conf.d
-      - ./auth/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/dsqp/auth/:/etc/nginx/conf.d
+      - /etc/dsqp/auth/nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
     - rstudio
   rstudio:
@@ -16,7 +16,7 @@ services:
     environment:
     - RSTUDIO_USERS=${RSTUDIO_USERS} # define users to be created <user>,<pw>;<user>,<pw>;
     volumes:
-      - ./ds_scripts/:/home/
+      - ${QP_DATA_DIR}/ds_scripts/:/home/
     networks:
     - rstudio
     command: bash -c "/startRServer.sh" 

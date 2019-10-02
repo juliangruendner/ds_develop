@@ -1,6 +1,9 @@
-source ./opal_poll.config
+source /etc/dsqp/opal_poll.config
 
 printf "######################\nInitialising Opal and installing Datashield and RServer ...\n######################\n\n"
+
+QP_HOME_DIR=${QP_HOME_DIR:-"$HOME/ds_deployment"}
+
 
 docker-compose -f docker-compose.poll.prod.yml up -d
 

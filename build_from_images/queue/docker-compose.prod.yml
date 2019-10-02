@@ -12,10 +12,10 @@ services:
     environment:
       - ALLOWED_IPS=${ALLOWED_IPS}
     volumes:
-      - ./nginx/queuecert.pem:/etc/nginx/conf.d/queuecert.pem
-      - ./nginx/queuekey.pem:/etc/nginx/conf.d/queuekey.pem
-      - ./nginx/dhparam.pem:/etc/nginx/dhparam.pem
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/dsqp//nginx/queuecert.pem:/etc/nginx/conf.d/queuecert.pem
+      - /etc/dsqp/nginx/queuekey.pem:/etc/nginx/conf.d/queuekey.pem
+      - /etc/dsqp/nginx/dhparam.pem:/etc/nginx/dhparam.pem
+      - /etc/dsqp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     environment:
       - ALLOWED_IPS=${ALLOWED_IPS} # ALLOWED_IPS='-c 103.102.323.23'
     
@@ -23,7 +23,7 @@ services:
     container_name: queue_server_prod
     image: ds_queue:latest
     volumes:
-      - ./auth/queue.pem:/root/ds_queue/cert/do_cert/queue.pem
+      - /etc/dsqp/auth/queue.pem:/root/ds_queue/cert/do_cert/queue.pem
     environment:
     - TIMEOUT_QUEUE_AND_POLL=${TIMEOUT_QUEUE_AND_POLL} # define timeout for requests
     - ALLOWED_IPS=${ALLOWED_IPS} # ALLOWED_IPS='-c 103.102.323.23'

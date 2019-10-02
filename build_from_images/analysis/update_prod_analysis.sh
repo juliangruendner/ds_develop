@@ -1,4 +1,4 @@
-source ./ds_analysis.config
+source /etc/dsqp/ds_analysis.config
 
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
@@ -6,7 +6,7 @@ if [[ $(which docker) ]]; then
     
 else
     echo "docker not installed, installing docker:"
-    cd ~/ds_deployment/ds_develop
+    cd $QP_HOME_DIR
     ./install_docker.sh
 fi
 

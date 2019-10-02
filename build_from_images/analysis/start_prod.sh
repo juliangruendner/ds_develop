@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./ds_analysis.config
+source /etc/dsqp/ds_analysis.config
 #CURPW=$(pwgen -s -1 15)
 # define users to be created in this format: <user>,<pw>;<user>,<pw>;
 #export RSTUDIO_USERS="datashield,$CURPW"

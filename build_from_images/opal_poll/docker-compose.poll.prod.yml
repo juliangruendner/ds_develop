@@ -13,8 +13,8 @@ services:
     - MONGODBHOST=${OPAL_MONGODB_HOST}
     - INITTESTDATA=true
     volumes:
-    - ./ds_data/opal:/srv
-    - ./auth:/auth
+    - ${QP_DATA_DIR}/opal:/srv
+    - /etc/dsqp/auth:/auth
   rserver:
     container_name: datashield_rserver
     image: obiba/opal-rserver:latest
@@ -24,7 +24,7 @@ services:
     container_name: datashield_mongo
     image: mongo
     volumes:
-    - ./ds_data/mongo_data:/data/db
+    - ${QP_DATA_DIR}/mongo_data:/data/db
     networks:
     - opal_net
   #poll_gui_server:
@@ -47,8 +47,8 @@ services:
     networks:
       - opal_net
     volumes:
-      - ./poll_logging:/root/ds_poll/logging
-      - ./auth:/auth
+      - ${QP_DATA_DIR}/poll_logging:/root/ds_poll/logging
+      - ${QP_CONFIG_DIR}/auth:/auth
 
 networks:
   opal_net:

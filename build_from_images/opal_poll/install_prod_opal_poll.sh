@@ -1,15 +1,27 @@
 source ./opal_poll.config
 
+QP_HOME_DIR=${QP_HOME_DIR:-"$HOME/ds_deployment"}
+
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
     docker -v
     
 else
     echo "docker not installed, installing docker:"
-    cd ~/ds_deployment/ds_develop
+    cd $QP_HOME_DIR/ds_develop
     ./install_docker.sh
 fi
 
+printf "**** Creating directory /etc/dsqp for config files and copying unzipped config files to /etc/dsqp directory ...\n\n"
+mkdir -p $QP_DATA_DIR
+mkdir -p /etc/dsqp/auth
+cp $QP_HOME_DIR/opal_poll.config /etc/dsqp/opal_poll.config
+cp -R $QP_HOME_DIR/auth/* /etc/dsqp/auth
+
+
+printf "**** removing config files from home repository $QP_HOME_DIR...\n\n"
+rm $QP_HOME_DIR/opal_poll.config
+rm -rf $QP_HOME_DIR/auth
 
 if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
     printf "**** registry fround pulling images from $QP_DOCKER_REGISTRY_PREFIX ...\n\n"

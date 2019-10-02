@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # this scripts reconfigures the queue server for you
-source ./queue.config
+source /etc/dsqp/queue.config
 
 ./stop_prod.sh
 ./start_prod.sh

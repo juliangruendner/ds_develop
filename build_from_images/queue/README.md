@@ -35,20 +35,23 @@ Make sure that the list contains at least the IP address of your Poll-Opal serve
 important: the "-c" has to be retained, followed by a space and then the list of allowed IP addresses.
 
 
+
 ### Install own SSL certificate
 
 The queue server comes with a nginx reverse proxy. This means that two certificates have to be changed. One for the queue and one for the nginx server.
 
+Important: this has to be done after you have installed the queue.
+
 
 **Certificate nginx reverse proxy:**
-1. Open the queuecert.pem and queuekey.pem files in your application directory  Applikationsverzeichnis ((`<applicationDir>/nginx`))
+1. Open the queuecert.pem and queuekey.pem files in your application config file directory  Applikationsverzeichnis ((`/etc/dsq/nginx`))
 2. Delete the respective file contents
 3. Insert your own certificate (in queuecert.pem) and key (in queuekey.pem) into the respective files
 4. If you are using your own CA (certificate authority) make sure you also paste all the intermediate certificates into your queuecert.pem file
 
 
 **Certificate queue_server:**
-1. open the queue.pem file in your application director (`<applicationDir>/auth`)
+1. open the queue.pem file in your application directory (`/etc/dsq/auth`)
 2. delete the content of the queue.pem file
 3. Paste your own certificate and private key into the queue.pem file
 4. If you are using your own CA (certificate authority) make sure you also paste all the intermediate certificates
