@@ -1,4 +1,4 @@
-source ./opal_poll.config
+source /etc/dsqp/opal_poll.config
 
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "

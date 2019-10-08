@@ -2,7 +2,7 @@ version: '3.2'
 services:
   nginx:
     container_name: ds_rstudio_nginx
-    image: "nginx:alpine"
+    image: "nginx:1.17-alpine"
     ports:
       - 8787:8787
     volumes:
@@ -16,7 +16,7 @@ services:
     environment:
     - RSTUDIO_USERS=${RSTUDIO_USERS} # define users to be created <user>,<pw>;<user>,<pw>;
     volumes:
-      - ${QP_DATA_DIR}/ds_scripts/:/home/
+      - ${QP_DATA_DIR}/ds_homes/:/home/
     networks:
     - rstudio
     command: bash -c "/startRServer.sh" 

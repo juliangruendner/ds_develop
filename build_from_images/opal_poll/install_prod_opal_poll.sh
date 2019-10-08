@@ -15,13 +15,15 @@ fi
 printf "**** Creating directory /etc/dsqp for config files and copying unzipped config files to /etc/dsqp directory ...\n\n"
 mkdir -p $QP_DATA_DIR
 mkdir -p /etc/dsqp/auth
+mkdir -p /etc/dsqp/miracum_users
 cp $QP_HOME_DIR/opal_poll.config /etc/dsqp/opal_poll.config
 cp -R $QP_HOME_DIR/auth/* /etc/dsqp/auth
-
+cp -R $QP_HOME_DIR/miracum_users/* /etc/dsqp/miracum_users
 
 printf "**** removing config files from home repository $QP_HOME_DIR...\n\n"
 rm $QP_HOME_DIR/opal_poll.config
 rm -rf $QP_HOME_DIR/auth
+rm -rf $QP_HOME_DIR/miracum_users
 
 if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
     printf "**** registry fround pulling images from $QP_DOCKER_REGISTRY_PREFIX ...\n\n"

@@ -15,6 +15,7 @@ services:
     volumes:
     - ${QP_DATA_DIR}/opal:/srv
     - /etc/dsqp/auth:/auth
+    - /etc/dsqp/miracum_users:/miracum_users
   rserver:
     container_name: datashield_rserver
     image: obiba/opal-rserver:latest
