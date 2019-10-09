@@ -1,6 +1,6 @@
 #!/bin/bash
-#source /etc/dsqp/opal_poll.config
-source ./opal_poll.config
+source /etc/dsqp/opal_poll.config
+
 len=${#MIRACUM_PROJECTS[@]}
 
 printf "Creating miracum projects - note: the miracum import user will get permission to administer the projects"

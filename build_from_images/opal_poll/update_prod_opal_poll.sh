@@ -1,5 +1,7 @@
 source /etc/dsqp/opal_poll.config
 
+QP_HOME_DIR=${QP_HOME_DIR:-"$HOME/ds_deployment"}
+
 if [[ $(which docker) ]]; then
     echo "docker already installled, version is: "
     docker -v
@@ -16,6 +18,11 @@ if [[ -n $QP_DOCKER_REGISTRY_PREFIX ]]; then
    ./pullPollProdImages.sh $QP_DOCKER_REGISTRY_PREFIX $QP_DOCKER_REGISTRY_USER $QP_DOCKER_REGISTRY_PW
 fi
 
+
+printf "\n Removing config folders and files from home directory $QP_HOME_DIR - you can find your config files  here /etc/dsqp/ \n"
+rm -rf $QP_HOME_DIR/auth
+rm -rf $QP_HOME_DIR/miracum_users
+rm $QP_HOME_DIR/opal_poll.config
 
 docker-compose -f docker-compose.poll.prod.yml down
 
